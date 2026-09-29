@@ -1,0 +1,227 @@
+{% extends 'basic.html' %}
+{% block title %}Home - Placement Portal{% endblock %}
+{% block body %}
+{% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+	<!-- banner -->
+	<div class="banner-agile">
+		<ul class="slider">
+			<li class="active">
+				<div class="banner-w3ls-1">
+				</div>
+			</li>
+			<li>
+				<div class="banner-w3ls-2">
+				</div>
+			</li>
+			<li>
+				<div class="banner-w3ls-3">
+				</div>
+			</li>
+			<li>
+				<div class="banner-w3ls-4">
+				</div>
+			</li>
+			<li class="prev">
+				<div class="banner-w3ls-5">
+				</div>
+			</li>
+		</ul>
+		<ul class="pager">
+			<li data-index="0" class="active"></li>
+			<li data-index="1"></li>
+			<li data-index="2"></li>
+			<li data-index="3"></li>
+			<li data-index="4"></li>
+		</ul>
+		<div class="banner-text-posi-w3ls">
+			<div class="banner-text-whtree">
+				<h3 class="text-capitalize text-white p-4">your bright future
+					<b>is our mission!</b>
+				</h3>
+				<p class="px-4 py-3 text-dark">Become top-of-the-flight specialist after graduating!</p>
+				<a href=" {% static 'about.html' %} " class="button-agiles text-capitalize text-white mt-sm-5 mt-4">read more</a>
+			</div>
+		</div>
+
+		<!-- navigation -->
+
+		<!-- //navigation -->
+	</div>
+	<!-- //banner -->
+{% include 'messages.html' %}
+	<!-- about -->
+	<div class="about py-5">
+		<div class="container py-xl-5 py-lg-3">
+			<h3 class="title text-capitalize font-weight-light text-dark text-center mb-5">Welcome to
+				<span class="font-weight-bold">Placement Portal</span>
+			</h3>
+			<div class="row pt-md-4">
+				<div class="col-lg-6 about_right">
+					<h3 class="text-capitalize text-right font-weight-light font-italic">interface friendly learning at
+						<span class="font-weight-bold">Placement Portal</span>
+					</h3>
+					<p class="text-right my-4 pr-4 border-right">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
+						eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+					<div class="about_left-list">
+						<h6 class="mb-lg-3 mb-2 font-weight-bold text-dark">Our Benefits</h6>
+						<ul class="list-unstyled">
+							<li class="mb-2">
+								<i class="fas fa-check mr-3"></i>Duis aute irure dolor in reprehe</li>
+							<li class="mb-2">
+								<i class="fas fa-check mr-3"></i>unt in culpa qui officia deserunt</li>
+							<li class="mb-2">
+								<i class="fas fa-check mr-3"></i>Nemo enim ipsam voluptatem quia</li>
+							<li class="mb-2">
+								<i class="fas fa-check mr-3"></i>quis nostrum exercitationem ullam</li>
+							<li class="mb-2">
+								<i class="fas fa-check mr-3"></i>corporis suscipit laboriosam</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-6 left-img-agikes mt-lg-0 mt-sm-4 mt-3 text-right">
+					<img src=" {% static 'images/ab.jpg' %} " alt="" class="img-fluid" />
+
+					<div class="about-bottom text-center p-sm-5 p-4">
+						<ul>
+							<li>
+								<h5>60+</h5>
+								<p class="text-dark font-weight-bold">Companies</p>
+							</li>
+							<li>
+								<h5>2000+</h5>
+								<p class="text-dark font-weight-bold">Students</p>
+							</li>
+							<li>
+								<h5>800+</h5>
+								<p class="text-dark font-weight-bold">Placed</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //about -->
+
+	<!-- testimonials -->
+	<div class="testimonials py-5">
+		<div class="container py-xl-5 py-lg-3">
+			<h3 class="title text-capitalize font-weight-light text-white text-center mb-5">what our
+				<span class="font-weight-bold">people says</span>
+			</h3>
+			<div class="mis-stage">
+				<!-- The element to select and apply miSlider to - the class is optional -->
+				<ol class="mis-slider">
+					<!-- The slider element - the class is optional -->
+					<li class="mis-slide">
+						<!-- A slide element - the class is optional -->
+						<a href="#" class="mis-container">
+							<!-- A slide container - this element is optional, if absent the plugin adds it automatically -->
+							<figure>
+								<!-- Slide content - whatever you want -->
+								<img src=" {% static 'images/t1.jpg' %} " alt=" " class="img-fluid" />
+								<figcaption>Carl Lii
+									<span>Sed maximus eros quis leo.</span>
+								</figcaption>
+							</figure>
+						</a>
+					</li>
+					<li class="mis-slide">
+						<a href="#" class="mis-container">
+							<figure>
+								<img src=" {% static 'images/t2.jpg' %} " alt=" " class="img-fluid" />
+								<figcaption>Michael Paul
+									<span>Sed maximus eros quis leo.</span>
+								</figcaption>
+							</figure>
+						</a>
+					</li>
+					<li class="mis-slide">
+						<a href=" {% static 'link' %} " class="mis-container">
+							<figure>
+								<img src=" {% static 'images/t3.jpg' %} " alt=" " class="img-fluid" />
+								<figcaption>Henry Doe
+									<span>Sed maximus eros quis leo.</span>
+								</figcaption>
+							</figure>
+						</a>
+					</li>
+					<li class="mis-slide">
+						<a href="#" class="mis-container">
+							<figure>
+								<img src=" {% static 'images/t4.jpg' %} " alt=" " class="img-fluid" />
+								<figcaption>Laura James
+									<span>Sed maximus eros quis leo.</span>
+								</figcaption>
+							</figure>
+						</a>
+					</li>
+					<li class="mis-slide">
+						<a href="#" class="mis-container">
+							<figure>
+								<img src=" {% static 'images/t5.jpg' %} " alt=" " class="img-fluid" />
+								<figcaption>Thomas Carl
+									<span>Sed maximus eros quis leo.</span>
+								</figcaption>
+							</figure>
+						</a>
+					</li>
+					<li class="mis-slide">
+						<a href="#" class="mis-container">
+							<figure>
+								<img src=" {% static 'images/t6.jpg' %} " alt=" " class="img-fluid" />
+								<figcaption>Rosy Crisp
+									<span>Sed maximus eros quis leo.</span>
+								</figcaption>
+							</figure>
+						</a>
+					</li>
+					<li class="mis-slide">
+						<a href="#" class="mis-container">
+							<figure>
+								<img src=" {% static 'images/t4.jpg' %} " alt=" " class="img-fluid" />
+								<figcaption>Michael Paul
+									<span>Sed maximus eros quis leo.</span>
+								</figcaption>
+							</figure>
+						</a>
+					</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+	<!-- //testimonials -->
+
+
+
+	<!-- brands -->
+	<div class="brands-w3ls py-md-5 py-4">
+		<div class="container py-xl-3">
+			<ul class="list-unstyled">
+				<li>
+					<i class="fab fa-supple"></i>
+				</li>
+				<li>
+					<i class="fab fa-angrycreative"></i>
+				</li>
+				<li>
+					<i class="fab fa-aviato"></i>
+				</li>
+				<li>
+					<i class="fab fa-aws"></i>
+				</li>
+				<li>
+					<i class="fab fa-cpanel"></i>
+				</li>
+				<li>
+					<i class="fab fa-hooli"></i>
+				</li>
+				<li>
+					<i class="fab fa-node"></i>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- //brands -->
+{% endblock %}

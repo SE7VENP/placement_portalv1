@@ -1,0 +1,164 @@
+{% extends 'basic.html' %}
+{% block title %}Profile Page - Placement Portal{% endblock %}
+{% block body %}
+{% load static %}
+	<!-- banner -->
+	<div class="banner-agile-2">
+
+	</div>
+	<!-- breadcrumb -->
+	<nav aria-label="breadcrumb">
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item">
+				<a href="/">Home</a>
+			</li>
+			<li class="breadcrumb-item active" aria-current="page">Profile</li>
+		</ol>
+	</nav>
+	<!-- breadcrumb -->
+	<!-- //banner -->
+{% include 'messages.html' %}
+	<!-- history -->
+	<div class="about-page py-5">
+		<div class="container py-xl-5 py-lg-3">
+			<h3 class="title text-capitalize font-weight-light text-dark text-center mb-5">My Details
+			</h3>
+			<div class="row about-head-wthree">
+				<div class="col-lg-6 left-abw3ls">
+					<img src="/media/{{companydata.l_id.dp}}" alt="" height="350px" style="margin-bottom:35px;">
+                    <br>
+                    <span>City:</span><p>{{companydata.company_city}} </p>
+                    <span>Area:</span><p>{{companydata.company_area}} </p>
+				</div>
+				<div class="col-lg-6 right-abw3ls mt-lg-0 mt-sm-5 mt-4" style="margin-bottom:15px;">
+					<h4 class="font-italic border-bottom text-center font-weight-bold pb-3 mb-4">{{companydata.company_name}}</h4>
+                    <span>Company Type:</span><p>{{companydata.company_type}} </p>
+                    <span>Company Address:</span><p>{{companydata.company_address}} </p>
+                    <span>Company Website:</span><p>{{companydata.company_webiste}} </p>
+                    <span>Founded in:</span><p>{{companydata.founded_year}}</p>
+                    <span>Support Mail:</span><p>{{companydata.company_support_mail}} </p>
+                    <span>Support Phone:</span><p>{{companydata.company_support_phone}} </p>
+                    <span>Company Size:</span><p>{{companydata.company_size}} </p>
+
+					<a href="/editprofilecompany" class="btn btn-primary blog-button mt-3">Edit Profile</a>
+					<a href="#" class="btn btn-primary blog-button mt-3" data-toggle="modal" data-target="#exampleModalCenterDP">Edit DP</a>
+					<a href="#" class="btn btn-primary blog-button mt-3" data-toggle="modal" data-target="#exampleModalCenterPw">Edit Password</a>
+				</div>
+
+				<br>
+
+			</div>
+
+			<div class="modal fade" id="exampleModalCenterDP" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="login px-4 mx-auto mw-100">
+                        <h3 class="text-center mb-4">Change Your DP</h3>
+                        <form action="/changedp" method="post" enctype="multipart/form-data" class="contact-form">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label>Select Image:</label>
+                                    <input class="form-control" name="changedp" type="file" accept="image/*" required="">
+                                </div>
+
+                            <button type="submit" class="btn btn-primary submit mb-4">Submit</button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+			<div class="modal fade" id="exampleModalCenterPw" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="login px-4 mx-auto mw-100">
+                        <h3 class="text-center mb-4">Change Your Password</h3>
+                        <form action="/changepw" method="post" enctype="multipart/form-data" class="contact-form">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label for="cpw">Current Password:</label>
+                                    <input class="form-control" name="oldpassword" id="cpw" type="password" placeholder="Enter Current Password">
+                                </div>
+                            <div class="form-group">
+                                <label for="npw">New Password:</label>
+                                    <input class="form-control" name="password" id="npw" type="password" placeholder="Enter New Password">
+                                </div>
+
+                            <button type="submit" class="btn btn-primary submit mb-4">Submit</button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+		</div>
+	</div>
+	<!-- //history -->
+
+
+
+
+
+	<!-- Js files -->
+	<!-- JavaScript -->
+	<script src=" {% static 'js/jquery-2.2.3.min.js' %} "></script>
+	<!-- Default-JavaScript-File -->
+	<script src=" {% static 'js/bootstrap.js' %} "></script>
+	<!-- Necessary-JavaScript-File-For-Bootstrap -->
+
+	<!-- testimonial-plugin -->
+	<script src=" {% static 'js/mislider.js' %} "></script>
+	<script>
+		jQuery(function ($) {
+			var slider = $('.mis-stage').miSlider({
+				//  The height of the stage in px. Options: false or positive integer. false = height is calculated using maximum slide heights. Default: false
+				stageHeight: 320,
+				//  Number of slides visible at one time. Options: false or positive integer. false = Fit as many as possible.  Default: 1
+				slidesOnStage: false,
+				//  The location of the current slide on the stage. Options: 'left', 'right', 'center'. Defualt: 'left'
+				slidePosition: 'center',
+				//  The slide to start on. Options: 'beg', 'mid', 'end' or slide number starting at 1 - '1','2','3', etc. Defualt: 'beg'
+				slideStart: 'mid',
+				//  The relative percentage scaling factor of the current slide - other slides are scaled down. Options: positive number 100 or higher. 100 = No scaling. Defualt: 100
+				slideScaling: 150,
+				//  The vertical offset of the slide center as a percentage of slide height. Options:  positive or negative number. Neg value = up. Pos value = down. 0 = No offset. Default: 0
+				offsetV: -5,
+				//  Center slide contents vertically - Boolean. Default: false
+				centerV: true,
+				//  Opacity of the prev and next button navigation when not transitioning. Options: Number between 0 and 1. 0 (transparent) - 1 (opaque). Default: .5
+				navButtonsOpacity: 1,
+			});
+		});
+	</script>
+	<!-- //testimonial-plugin -->
+
+	<!-- smooth scrolling -->
+	<script src=" {% static 'js/SmoothScroll.min.js' %} "></script>
+	<!-- //smooth scrolling -->
+
+	<!-- move-top -->
+	<script src=" {% static 'js/move-top.js' %} "></script>
+	<!-- easing -->
+	<script src=" {% static 'js/easing.js' %} "></script>
+	<!--  necessary snippets for few javascript files -->
+	<script src=" {% static 'js/edulearn.js' %} "></script>
+    <script src=" {% static 'js/responsive.js' %} "></script>
+	<!-- //Js files -->
+
+{% endblock %}

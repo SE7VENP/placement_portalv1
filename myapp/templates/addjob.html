@@ -1,0 +1,146 @@
+{% extends 'basic.html' %}
+{% block title %}Post a Job - Placement Portal{% endblock %}
+{% block body %}
+{% load static %}
+	<!-- banner -->
+	<div class="banner-agile-2">
+		<!-- navigation -->
+
+		<!-- //navigation -->
+	</div>
+
+	<!-- breadcrumb -->
+	<nav aria-label="breadcrumb">
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item">
+				<a href=" {% static 'index.html' %} ">Home</a>
+			</li>
+			<li class="breadcrumb-item active" aria-current="page">Post a Job</li>
+		</ol>
+	</nav>
+	<!-- breadcrumb -->
+	<!-- //banner -->
+{% include 'messages.html' %}
+	<!-- register -->
+	<div class="login-w3ls py-5">
+		<div class="container py-xl-5 py-lg-3">
+			<h3 class="title text-capitalize font-weight-light text-dark text-center mb-5">Add Job
+				<span class="font-weight-bold">now</span>
+			</h3>
+			<!-- content -->
+			<div class="sub-main-w3 pt-md-4">
+				<form action="/postjob" method="post" enctype="multipart/form-data"> {% csrf_token %}
+
+					<div class="form-style-agile form-group">
+						<label>
+							Job Role:
+						</label>
+						<input placeholder="Job Role" class="form-control" name="role" type="text" required="">
+					</div>
+					<div class="form-style-agile form-group">
+						<label>
+							Job Skill:
+						</label>
+						<input placeholder="Enter Skills" class="form-control" name="skill" type="text" required="">
+					</div>
+					<div class="form-style-agile form-group">
+						<label>
+							Job Description:
+						</label>
+                        <textarea placeholder="Job Description" class="form-control" name="jd" required=""></textarea>
+					</div>
+
+					<div class="form-style-agile form-group">
+						<label>
+							Vacancy:
+						</label>
+						<input placeholder="No. of Open Positions" class="form-control" name="vacancy" type="text" required="">
+					</div>
+					<div class="form-style-agile form-group">
+						<label>
+							Base Pay:
+						</label>
+						<input placeholder="Base Salary" class="form-control" name="pay" type="text" required="">
+					</div>
+					<input type="submit" value="Post a Job">
+				</form>
+			</div>
+			<!-- //content -->
+		</div>
+	</div>
+	<!-- //register -->
+
+	<!-- brands -->
+	<div class="brands-w3ls py-md-5 py-4">
+		<div class="container py-xl-3">
+			<ul class="list-unstyled">
+				<li>
+					<i class="fab fa-supple"></i>
+				</li>
+				<li>
+					<i class="fab fa-angrycreative"></i>
+				</li>
+				<li>
+					<i class="fab fa-aviato"></i>
+				</li>
+				<li>
+					<i class="fab fa-aws"></i>
+				</li>
+				<li>
+					<i class="fab fa-cpanel"></i>
+				</li>
+				<li>
+					<i class="fab fa-hooli"></i>
+				</li>
+				<li>
+					<i class="fab fa-node"></i>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- //brands -->
+
+
+
+
+	<!-- Js files -->
+	<!-- JavaScript -->
+	<script src=" {% static 'js/jquery-2.2.3.min.js' %} "></script>
+	<!-- Default-JavaScript-File -->
+	<script src=" {% static 'js/bootstrap.js' %} "></script>
+	<!-- Necessary-JavaScript-File-For-Bootstrap -->
+
+	<!-- password-script -->
+	<script>
+		window.onload = function () {
+			document.getElementById("password1").onchange = validatePassword;
+			document.getElementById("password2").onchange = validatePassword;
+		}
+
+		function validatePassword() {
+			var pass2 = document.getElementById("password2").value;
+			var pass1 = document.getElementById("password1").value;
+			if (pass1 != pass2)
+				document.getElementById("password2").setCustomValidity("Passwords Don't Match");
+			else
+				document.getElementById("password2").setCustomValidity('');
+			//empty string means no validation error
+		}
+	</script>
+	<!-- //password-script -->
+
+	<!-- smooth scrolling -->
+	<script src=" {% static 'js/SmoothScroll.min.js' %} "></script>
+	<!-- //smooth scrolling -->
+
+	<!-- move-top -->
+	<script src=" {% static 'js/move-top.js' %} "></script>
+	<!-- easing -->
+	<script src=" {% static 'js/easing.js' %} "></script>
+	<!--  necessary snippets for few javascript files -->
+	<script src=" {% static 'js/edulearn.js' %} "></script>
+	<script src=" {% static 'js/responsive.js' %} "></script>
+	<!-- //Js files -->
+
+
+{% endblock %}

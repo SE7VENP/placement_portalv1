@@ -1,0 +1,192 @@
+{% extends 'basic.html' %}
+{% block title %}Edit Profile - Placement Portal{% endblock %}
+{% block body %}
+{% load static %}
+	<!-- banner -->
+	<div class="banner-agile-2">
+		<!-- navigation -->
+
+		<!-- //navigation -->
+	</div>
+
+	<!-- breadcrumb -->
+	<nav aria-label="breadcrumb">
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item">
+				<a href="/">Home</a>
+			</li>
+			<li class="breadcrumb-item active" aria-current="page">Edit Profile</li>
+		</ol>
+	</nav>
+	<!-- breadcrumb -->
+	<!-- //banner -->
+{% include 'messages.html' %}
+	<!-- register -->
+	<div class="login-w3ls py-5">
+		<div class="container py-xl-5 py-lg-3">
+			<h3 class="title text-capitalize font-weight-light text-dark text-center mb-5">Edit Profile
+			</h3>
+			<!-- content -->
+			<div class="sub-main-w3 pt-md-4">
+				<form action="/editprofilesubmit" method="post" enctype="multipart/form-data">{% csrf_token %}
+
+					<div class="form-style-agile form-group">
+						<label>
+							Name
+							<i class="fas fa-user"></i>
+						</label>
+						<input placeholder="{{profiledata.name}}" value="{{profiledata.name}}" class="form-control" name="name" type="text" required="">
+					</div>
+					<div class="form-style-agile form-group">
+						<label>
+							Email
+							<i class="fas fa-envelope"></i>
+						</label>
+						<input placeholder="{{profiledata.l_id.email_id}}" value="{{profiledata.l_id.email_id}}" class="form-control" name="email" type="email" required="">
+					</div>
+					<div class="form-style-agile form-group">
+						<label>
+							Your Phone
+							<i class="fas fa-phone"></i>
+						</label>
+						<input placeholder="{{profiledata.l_id.phone_no}}" value="{{profiledata.l_id.phone_no}}" class="form-control" name="phone" type="tel" required="">
+					</div>
+					<div class="form-style-agile form-group">
+						<label>
+							Enrollment No.
+							<i class="fas fa-user"></i>
+						</label>
+						<input placeholder="{{profiledata.Enrollment}}" value="{{profiledata.Enrollment}}" class="form-control" name="enroll" type="text" required="">
+					</div>
+					<div class="form-style-agile form-group">
+						<label>
+							Passout Year
+							<i class="fas fa-user"></i>
+						</label>
+						<input placeholder="{{profiledata.passoutyear}}" value="{{profiledata.passoutyear}}" class="form-control" name="passoutyear" type="number" required="">
+					</div>
+
+					<div class="form-style-agile form-group">
+						<label>
+							Address
+							<i class="fas fa-address-card"></i>
+						</label>
+						<input placeholder="{{profiledata.address}}" value="{{profiledata.address}}" class="form-control" name="address" id="address" type="text" required="">
+					</div>
+					<div class="form-style-agile form-group">
+						<label>Choose Area:
+
+						</label>
+						<select  id="areaname" name="areaname">
+							<option selected value="{{profiledata.area_id.id}}">{{profiledata.area_id.area_name}}</option>
+						{% for a in areadetail %}
+					  		<option value="{{a.id}}">{{a.area_name}}</option>
+						{% endfor %}
+						</select>
+					</div>
+
+					<div class="form-style-agile form-group">
+						<label>Choose a City:
+
+						</label>
+						<select id="cityname" name="cityname">
+						<option selected value="{{profiledata.city_id.id}}">{{profiledata.city_id.city_name}}</option>
+						{% for city in citydetail %}
+						  <option value="{{city.id}}">{{city.city_name}}</option>
+						{% endfor %}
+						</select>
+					</div>
+					<div class="form-style-agile form-group">
+						<label>Choose a State:
+
+						</label>
+						<select id="statename" name="statename">
+						<option selected value="{{profiledata.state_id.id}}">{{profiledata.state_id.state_name}}</option>
+						{% for s in statedetail %}
+						  <option value="{{s.id}}">{{s.state_name}}</option>
+							{% endfor %}
+						</select>
+					</div>
+
+					<input type="submit" value="Submit">
+				</form>
+			</div>
+			<!-- //content -->
+		</div>
+	</div>
+	<!-- //register -->
+
+	<!-- brands -->
+	<div class="brands-w3ls py-md-5 py-4">
+		<div class="container py-xl-3">
+			<ul class="list-unstyled">
+				<li>
+					<i class="fab fa-supple"></i>
+				</li>
+				<li>
+					<i class="fab fa-angrycreative"></i>
+				</li>
+				<li>
+					<i class="fab fa-aviato"></i>
+				</li>
+				<li>
+					<i class="fab fa-aws"></i>
+				</li>
+				<li>
+					<i class="fab fa-cpanel"></i>
+				</li>
+				<li>
+					<i class="fab fa-hooli"></i>
+				</li>
+				<li>
+					<i class="fab fa-node"></i>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- //brands -->
+
+
+
+
+	<!-- Js files -->
+	<!-- JavaScript -->
+	<script src=" {% static 'js/jquery-2.2.3.min.js' %} "></script>
+	<!-- Default-JavaScript-File -->
+	<script src=" {% static 'js/bootstrap.js' %} "></script>
+	<!-- Necessary-JavaScript-File-For-Bootstrap -->
+
+	<!-- password-script -->
+	<script>
+		window.onload = function () {
+			document.getElementById("password1").onchange = validatePassword;
+			document.getElementById("password2").onchange = validatePassword;
+		}
+
+		function validatePassword() {
+			var pass2 = document.getElementById("password2").value;
+			var pass1 = document.getElementById("password1").value;
+			if (pass1 != pass2)
+				document.getElementById("password2").setCustomValidity("Passwords Don't Match");
+			else
+				document.getElementById("password2").setCustomValidity('');
+			//empty string means no validation error
+		}
+	</script>
+	<!-- //password-script -->
+
+	<!-- smooth scrolling -->
+	<script src=" {% static 'js/SmoothScroll.min.js' %} "></script>
+	<!-- //smooth scrolling -->
+
+	<!-- move-top -->
+	<script src=" {% static 'js/move-top.js' %} "></script>
+	<!-- easing -->
+	<script src=" {% static 'js/easing.js' %} "></script>
+	<!--  necessary snippets for few javascript files -->
+	<script src=" {% static 'js/edulearn.js' %} "></script>
+	<script src=" {% static 'js/responsive.js' %} "></script>
+	<!-- //Js files -->
+
+
+{% endblock %}
